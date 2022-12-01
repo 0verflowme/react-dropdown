@@ -23,16 +23,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  user-select: none;
 }
 
 .dropdown-body {
   padding: 5px;
   border-top: 1px solid #E5E8EC;
   display: none;
+  animation: SHOW-BOX 0.9s ease;
 }
 
 .dropdown-body.open {
   display: block;
+  animation: SHOW-BOX 0.9s ease;
 }
 
 .dropdown-item {
@@ -62,4 +65,44 @@ body {
 
 .icon.open {
   transform: rotate(90deg);
+}
+
+@-webkit-keyframes SHOW-BOX {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes SHOW-BOX {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes SHOW-BOX {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes SHOW-BOX {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

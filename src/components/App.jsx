@@ -9,7 +9,7 @@ function App() {
   const toggleDropdown = () => setOpen(!isOpen);
 
   const handleItemClick = (id) => {
-    selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
+    setSelectedItem(id);
     toggleDropdown();
   }
 
@@ -20,7 +20,8 @@ function App() {
         className='dropdown-header'
         onClick={toggleDropdown}>
         {selectedItem ? items.find(item => item.id == selectedItem).label : "Should you Use Dropdowns ?"}
-        <i className={`fa fa-chevron-right icon ${isOpen && "open"}`}></i>
+        <i className={`fa-solid fa-chevron-right icon ${isOpen && "open "}`}></i>
+        {/* <i class="fa-solid fa-chevron-right"></i> */}
       </div>
       <div className={`dropdown-body ${isOpen && 'open'}`}>
         {items.map((item, index) =>
@@ -36,8 +37,9 @@ function App() {
             {item.label}
           </div>
         ))}
+
       </div>
-    </div>
+    </div >
   )
 }
 
