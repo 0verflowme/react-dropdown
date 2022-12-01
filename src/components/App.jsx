@@ -6,8 +6,10 @@ function App() {
   const [items, setItem] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null);
 
+  // Handle opening and closing of dropdown
   const toggleDropdown = () => setOpen(!isOpen);
 
+  // selecting and closing dropdown
   const handleItemClick = (id) => {
     setSelectedItem(id);
     toggleDropdown();
@@ -23,12 +25,13 @@ function App() {
         <i className={`fa-solid fa-chevron-right icon ${isOpen && "open "}`}></i>
       </div>
       <div className={`dropdown-body ${isOpen && 'open'}`}>
+        {/* Rendering All item in list in dropdown */}
         {items.map((item, index) =>
         (
           <div
             key={index}
             className="dropdown-item"
-            onClick={e => handleItemClick(e.target.id)}
+            onClick={e => handleItemClick(e.target.id)} // hamdle on click on dropdown
             id={item.id}>
             <span
               className={`dropdown-item-dot ${item.id == selectedItem && 'selected'}`}>• &nbsp;
