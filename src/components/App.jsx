@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const data = [{ id: 0, label: "Istanbul, TR (AHL)" }, { id: 1, label: "Paris, FR (CDG)" }];
+const data = [{ id: 1, label: "Maybe Yes!" }, { id: 2, label: "Probably No" }];
 function App() {
   const [isOpen, setOpen] = useState(false);
   const [items, setItem] = useState(data);
@@ -16,14 +16,23 @@ function App() {
 
   return (
     <div className='dropdown'>
-      <div className='dropdown-header' onClick={toggleDropdown}>
-        {selectedItem ? items.find(item => item.id == selectedItem).label : "Select your destination"}
+      <div
+        className='dropdown-header'
+        onClick={toggleDropdown}>
+        {selectedItem ? items.find(item => item.id == selectedItem).label : "Should you Use Dropdowns ?"}
         <i className={`fa fa-chevron-right icon ${isOpen && "open"}`}></i>
       </div>
       <div className={`dropdown-body ${isOpen && 'open'}`}>
-        {items.map((item, index) => (
-          <div key={index} className="dropdown-item" onClick={e => handleItemClick(e.target.id)} id={item.id}>
-            <span className={`dropdown-item-dot ${item.id == selectedItem && 'selected'}`}>• </span>
+        {items.map((item, index) =>
+        (
+          <div
+            key={index}
+            className="dropdown-item"
+            onClick={e => handleItemClick(e.target.id)}
+            id={item.id}>
+            <span
+              className={`dropdown-item-dot ${item.id == selectedItem && 'selected'}`}>• &nbsp;
+            </span>
             {item.label}
           </div>
         ))}
