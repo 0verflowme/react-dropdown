@@ -21,7 +21,6 @@ function App() {
         onClick={toggleDropdown}>
         {selectedItem ? items.find(item => item.id == selectedItem).label : "Should you Use Dropdowns ?"}
         <i className={`fa-solid fa-chevron-right icon ${isOpen && "open "}`}></i>
-        {/* <i class="fa-solid fa-chevron-right"></i> */}
       </div>
       <div className={`dropdown-body ${isOpen && 'open'}`}>
         {items.map((item, index) =>
